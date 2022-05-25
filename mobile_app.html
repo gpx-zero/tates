@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Mohamolo</title>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300');</style>
+	<style type="text/css">
+		html{ background-color: #000; }
+		#body{opacity: 0;}
+		.body_anime{ animation: body_animation 0.5s; }
+		@keyframes body_animation{ 0%{opacity: 0} 100%{opacity: 1} }
+		*{
+			margin: 0 auto;
+			padding: 0;
+			font-family: 'Radio Canada', sans-serif;
+			font-size: 18px;
+			box-sizing: border-box;
+		}
+		#main_header{
+			position: fixed;
+			z-index: 5;
+			width: 100%;
+			padding: 10px;
+			box-shadow: 0 0 4px 0 #00000060;
+		}
+		#main_header img{
+			width: 40px;
+			vertical-align: middle;
+		}
+		#main_header #mobile{ float: right; }
+		#main_header #main_list{
+			background: #000000d0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50vw;
+			height: 100vh;
+		}
+		.main_list_anime{ animation: Main_list_anime 1s; }
+		.main_list_anime_v{ animation: Main_list_anime_v 0.2s; }
+		@keyframes Main_list_anime{ 0%{width: 0vw; opacity: 0;} 50%{opacity: 0.2;} 100%{width: 50vw; opacity: 1;} }
+		@keyframes Main_list_anime_v{ 0%{width: 50vw; opacity: 1;} 50%{opacity: 0;} 100%{width: 0vw; opacity: 0;} }
+		#main_header #main_list div{
+			position: absolute;
+		}
+		#main_header #main_list span{
+			color: #aaa;
+			margin: 20px;
+			display: inline-block;
+		}
+		#main_header span:hover{ color: #0dd; }
+		#main_header #lighting_mode{
+			width: 40px;
+			display: inline;
+			padding-left: 20px;
+		}
+		#intro{
+			text-align: center;
+			margin-bottom: 100px;
+			overflow: hidden;
+		}
+		#intro #text_play{
+			background-color: #111;
+			display: inline-block;
+			margin: 30px 0;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		#intro h2{
+			font-size: 2em;
+		}
+		#intro h2 span {
+			color: #f050f0;
+			font-size: inherit;
+		}
+		#intro h2 img { vertical-align: middle; }
+
+		.section{
+			width: 96%;
+			padding: 100px 10px;
+			border-radius: 5px;
+			overflow: hidden;
+			text-align: center;
+		}
+		.section .moha{ opacity: 0.3; width: 50vw; margin-top: 1em;}
+		.section div{
+			background: linear-gradient(#5555ff40, #5555ff10);
+			width: 100%;
+			padding: 1em;
+			border-radius: 10px;
+			text-align: left;
+		}
+		.section h2{
+			font-size: 2em;
+			font-weight: bold;
+		}
+		.section p{ font-size: 1em; }
+		.section div p .contact_imgs{
+			cursor: pointer;
+			vertical-align: middle;
+			opacity: 0.6;
+		}
+		.section div p .contact_imgs:hover{ opacity: 1; }
+		#donate{
+			background-color: #5555ff20;
+			padding: 20px;
+		}
+		#donate span{
+			background-color: #55ff55a0;
+			cursor: pointer;
+			padding: 5px;
+			font-weight: bold;
+		}
+		#donate span:hover{ background-color: #55ff55d0; }
+
+	</style>
+
+</head>
+
+<body id="body">
+
+	<a href="#main" id="main"></a>
+	<h1 id="main_header">
+
+		<img onclick="scroll_to('main')" src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/logo.png" alt="logo image"/>
+
+		<div id="lighting_mode" onclick="change_lighting_mode()">☀</div>
+		<div id="mobile" onclick="display_main_list()">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAA6ElEQVRoge2WMQ7CMAxFv8sNmMNhEBtHQMy5U1ckTsDAxmXagZUL9DMgQp10QKpEAP23ubWd5+0DQgghxA9j42J9uG3NrAUYAAJgD2O87JfncV/YnbZGtIAF4NFZrDNfs3yuqDn133/qByzi9bhJPo1r9/KAMRBos62oI28gLBgG59P4ISf/HFvlB9SRTzif/AAnn+oJKskX8/kBfS5PsJuQ7yvKOx9/gDES6MbyDRnzAzA0EbDXok/KG0ofIYSohrKQstDb8gllIWWhWfLKQkKIr0JZSFnobfmEspCy0Cx5ZSEhhBD/xB2ua/w0gBzosQAAAABJRU5ErkJggg=="/>
+		</div>
+		<ul id="main_list" style="display: none;">
+			<div>
+				<span onclick="scroll_to('about')">● About</span>
+				<span onclick="scroll_to('projects')">● Projects</span>
+				<span onclick="scroll_to('contact')">● Contact</span>
+				<span onclick="scroll_to('info')">● Info</span>
+			</div>
+		</ul>
+
+	</h1>
+
+	<div id="intro">
+
+		<img src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/intro.png" alt="intro image" width="1500" height="350px" />
+		<br/>
+		<p id="text_play"></p>
+		<h2>
+			Welcome to <span>MOHAMOLA</span>
+			<img src="https://emoji.gg/assets/emoji/1721-sparkles.gif" width="50"/>
+		</h2>
+
+	</div>
+
+	<a href="#about" id="about"></a>
+	<div class="section">
+
+		<img class="moha" src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/item_7.png" alt="mohamolo image"/>
+
+		<div style="transform: rotateZ(1deg);">
+			<h2>● About Mohamolo</h2>
+
+			<p>
+				☛ Mohamolo is a beginner game programmer, he started learning programming and creating some beautiful games, and now he has a YouTube channel in which he shares some short games and quick information, and his goal is to master this field and share ideas with other novice game programmers for the benefit of all.
+			</p>
+		</div>
+
+	</div>
+
+	<a href="#projects" id="projects"></a>
+	<div class="section">
+
+		<img class="moha" src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/item_4_rotated.png" alt="mohamolo image"/>
+
+		<div style="transform: rotateZ(-1deg)">
+			<h2>● Mohamolo future projects</h2>
+			<br/>
+			<p>
+				✂ There are a lot of future projects to do but at the moment we are not sure, we will write some projects here later, almost all future projects are 2D games with different themes and stories also different designs.
+			</p>
+		</div>
+
+	</div>
+
+	<a href="#contact" id="contact"></a>
+	<div class="section">
+
+		<img class="moha" src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/item_8.png" alt="mohamolo image"/>
+
+		<div style="transform: rotateZ(1deg);">
+			<h2>● For Contact Mohamolo</h2>
+			<br/>
+			<p>
+				★ We will be very happy when you tell us your thoughts and tips, also about your problems or question, here you will find some ways to contact us, don't forget to subscribe to our channel to help us keep going.
+				<br/><br/>
+				<a href="https://www.youtube.com/channel/UCBwLyd-89cycQCarsCcehIg" target="_blank">
+					<img src="https://img.icons8.com/doodle/48/000000/youtube-play--v1.png" class="contact_imgs">
+				</a>
+				<a href="https://twitter.com/moha_Boooss" target="_blank">
+					<img src="https://img.icons8.com/color-glass/48/000000/twitter.png" class="contact_imgs">
+				</a>
+				<a href="https://discord.gg/nvZZ5qG6Ff" target="_blank">
+					<img src="https://img.icons8.com/color/48/000000/discord-logo.png" class="contact_imgs">
+				</a>
+				
+			</p>
+		</div>
+		
+	</div>
+	
+	<a href="#info" id="info"></a>
+	<div class="section">
+
+		<img class="moha" src="https://raw.githubusercontent.com/gpx-zero/moha-molo/blogger/imgs/robot.png" alt="mohamolo image"/>
+
+		<div>
+
+			<h2>● Info</h2>
+			<br/>
+			<p>
+				✎ Game Development is the art of creating games and describes the design,
+				development and release of a game. 
+				It may involve concept generation, design, build, test and release. While you create a game,
+				it is important to think about the game mechanics, rewards, player engagement and level design...
+			</p>
+			<br/>
+			<section id="donate"> To help Mohamolo please <br/><br/> <span>Donate</span> </section>
+
+		</div>
+		
+	</div>
+	
+	<hr style="border-color:#00000050;margin-top: 100px;"/>
+	<p style="font-size: 10px;padding: 15px;"> ▎By Mohamolo Last update in 2022/05/03 </p>
+
+	<script type="text/javascript">
+
+		var GRID = false, Click = true;
+
+		// Display main list ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function display_main_list(){
+
+			let main_list = document.getElementById('main_list');
+
+			if(Click){
+
+				if (GRID){
+					Click = false;
+					main_list.classList.add('main_list_anime_v');
+					setTimeout(()=>{
+						main_list.classList.remove('main_list_anime_v');
+						main_list.style.display = 'none';
+						main_list.style.width = '0vw';
+						Click = true;
+					}, 100);
+					GRID = false;
+
+				}else{
+					Click = false;
+					main_list.style.display = 'grid';
+					main_list.classList.add('main_list_anime');
+					setTimeout(()=>{
+						main_list.classList.remove('main_list_anime');
+						main_list.style.width = '50vw';
+						Click = true;
+					}, 900);
+					GRID = true;
+
+				}
+
+			}
+
+		}
+
+		// Change lighting mode ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function setup_lighting_mode(){
+
+			if( localStorage.getItem('mode') == 'dark' ){
+				set_dark_mode();
+				document.getElementById('lighting_mode').innerHTML = '☀';
+
+			}else{
+				set_light_mode();
+				document.getElementById('lighting_mode').innerHTML = '☽';
+
+			}
+		};
+
+		function change_lighting_mode(){
+
+			let mode = document.getElementById('lighting_mode');
+
+			if( mode.innerHTML ==  '☽'){
+				set_dark_mode();
+				mode.innerHTML = '☀';
+				localStorage.setItem('mode', 'dark');
+
+			}else{
+				set_light_mode();
+				mode.innerHTML = '☽';
+				localStorage.setItem('mode', 'light');
+
+			}
+
+		}
+
+		function set_light_mode(){
+
+			document.getElementById('main_header').style.backgroundColor = '#e2e2e2';
+			document.getElementById('body').style.backgroundColor = '#e2e2e2';
+			document.getElementById('body').style.color = '#151515';
+
+			let section = document.getElementsByClassName('section');
+			for(let id=0; id<section.length; id++){ section[id].style.backgroundColor = '#f0f0f0'; }
+
+		}
+
+		function set_dark_mode(){
+
+			document.getElementById('main_header').style.backgroundColor = '#222222';
+			document.getElementById('body').style.backgroundColor = '#222222';
+			document.getElementById('body').style.color = '#fff';
+
+			let section = document.getElementsByClassName('section');
+			for(let id=0; id<section.length; id++){ section[id].style.backgroundColor = '#2a2a2a'; }
+			
+		}
+
+		// Text play ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function play_text(){
+
+			let text_play = document.getElementById('text_play'),
+				color_list = ['#d00', '#0d0', '#00d', '#dd0', '#d0d', '#0dd', '#ddd'],
+				count = 2022;
+
+			setInterval(()=>{
+				text_play.innerHTML = '▼ Download year ' + count++;
+				text_play.style.color = color_list[count%7];
+			}, 50);
+
+		};
+		
+		// Scroll into place ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function scroll_to(place){
+			
+			document.getElementById("body").classList.add('body_anime');
+			setTimeout(()=>{document.getElementById("body").classList.remove('body_anime')}, 500);
+			document.getElementById(place).click();
+			display_main_list();
+
+		}
+
+		// main ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		window.onload = ()=>{
+
+			setup_lighting_mode();
+			play_text();
+			document.getElementById("body").style.opacity = "1";
+			document.getElementById("body").classList.add('body_anime');
+			setTimeout(()=>{document.getElementById("body").classList.remove('body_anime')}, 500);
+			
+		}
+
+	</script>
+
+</body>
+</html>

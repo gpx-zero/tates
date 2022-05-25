@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Mohamolo</title>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300');</style>
+	<style type="text/css">
+		::-webkit-scrollbar { width: 10px }
+		::-webkit-scrollbar-track { background: #2a2a2a }
+		::-webkit-scrollbar-thumb { background: #555 }
+		::-webkit-scrollbar-thumb:hover { background: #aaa }
+		html{ background-color: #000; }
+		#body{ opacity: 0; }
+		.body_anime{ animation: body_animation 0.5s; }
+		@keyframes body_animation{ 0%{opacity: 0} 100%{opacity: 1} }
+		*{
+			margin: 0 auto;
+			padding: 0;
+			font-family: 'Radio Canada', sans-serif;
+			font-size: 18px;
+			box-sizing: border-box;
+		}
+		#main_header{
+			position: fixed;
+			z-index: 5;
+			width: 100%;
+			padding: 15px 50px;
+			box-shadow: 0 0 4px 0 #00000060;
+		}
+		#main_header img{
+			width: 40px;
+			vertical-align: middle;
+		}
+		#main_header span{
+			cursor: pointer;
+			padding: 20px 0;
+			padding-left: 30px;
+		}
+		#main_header span:hover{ color: #0dd; }
+		#main_header #lighting_mode{
+			float: right;
+			padding: 0;
+			font-size: 1.2em;
+		}
+		#intro{
+			text-align: center;
+			margin-bottom: 150px;
+			padding-top: 50px;
+		}
+		#intro #text_play{
+			background-color: #111;
+			display: inline-block;
+			margin: 30px 0;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		#intro h2{
+			font-size: 2.5em;
+		}
+		#intro h2 span {
+			color: #f050f0;
+			font-size: inherit;
+		}
+		#intro h2 img { overflow: hidden; }
+		.section{
+			display: flex;
+			width: 96%;
+			padding: 200px 10px;
+			border-radius: 5px;
+		}
+		.section .moha{ opacity: 0.3; }
+		.section div{
+			background: linear-gradient(#5555ff40, #5555ff10);
+			width: 50%;
+			padding: 1em;
+			border-radius: 10px;
+		}
+		.section h2{
+			font-size: 2.5em;
+			font-weight: bold;
+		}
+		.section p{ font-size: 1.5em; }
+		.section div p .contact_imgs{
+			cursor: pointer;
+			vertical-align: middle;
+			opacity: 0.6;
+		}
+		.section div p .contact_imgs:hover{ opacity: 1; }
+		#donate{
+			background-color: #5555ff20;
+			padding: 20px;
+		}
+		#donate span{
+			background-color: #55ff55a0;
+			cursor: pointer;
+			padding: 5px;
+			font-weight: bold;
+		}
+		#donate span:hover{ background-color: #55ff55d0; }
+
+	</style>
+
+</head>
+
+<body id="body">
+
+	<!--Custom URL https://raw.githubusercontent.com/gpx-zero/tates/main/-->
+
+	<a href="#main" id="main"></a>
+	<h1 id="main_header">
+
+		<img onclick="scroll_to('main')" src="imgs/logo.png" alt="logo image"/>
+		<span onclick="scroll_to('about')">● About</span>
+		<span onclick="scroll_to('projects')">● Projects</span>
+		<span onclick="scroll_to('contact')">● Contact</span>
+		<span onclick="scroll_to('info')">● Info</span>
+		<span id="lighting_mode" onclick="change_lighting_mode()">☀</span>
+
+	</h1>
+
+	<div id="intro">
+
+		<img src="imgs/intro.png" alt="intro image" width="1400" height="700" />
+		<br/>
+		<p id="text_play"></p>
+		<h2>
+			Welcome to <span>Tates</span>
+			<img src="https://emoji.gg/assets/emoji/1721-sparkles.gif" width="50"/>
+		</h2>
+
+	</div>
+
+	<a href="#about" id="about"></a>
+	<div class="section">
+		<hr/>
+		<img class="moha" src="imgs/logo.png" alt="tates image"/>
+
+		<div style="transform: rotateZ(1deg);">
+			<h2>● About Tates</h2>
+			<br/>
+			<p>
+				☛ Tates is a beginner game programmer, he started learning programming and creating some beautiful games, and now he has a YouTube channel in which he shares some short games and quick information, and his goal is to master this field and share ideas with other novice game programmers for the benefit of all.
+			</p>
+		</div>
+
+	</div>
+
+	<a href="#projects" id="projects"></a>
+	<div class="section">
+
+		<div style="transform: rotateZ(-1deg)">
+			<h2>● Tates future projects</h2>
+			<br/>
+			<p>
+				✂ There are a lot of future projects to do but at the moment we are not sure, we will write some projects here later, almost all future projects are 2D games with different themes and stories also different designs.
+			</p>
+		</div>
+
+		<img class="moha" src="imgs/logo.png" alt="tates image"/>
+		<hr/>
+		
+	</div>
+
+	<a href="#contact" id="contact"></a>
+	<div class="section">
+		<hr/>
+		<img class="moha" src="imgs/logo.png" alt="tates image"/>
+
+		<div style="transform: rotateZ(1deg);">
+			<h2>● For Contact Tates</h2>
+			<br/>
+			<p>
+				★ We will be very happy when you tell us your thoughts and tips, also about your problems or question, here you will find some ways to contact us, don't forget to subscribe to our channel to help us keep going.
+				<br/><br/>
+				<a href="https://www.youtube.com/channel/UCFA-PQyo17UQBbLj-PO73EA" target="_blank">
+					<img src="https://img.icons8.com/doodle/48/000000/youtube-play--v1.png" class="contact_imgs">
+				</a>
+				<a href="https://twitter.com/" target="_blank">
+					<img src="https://img.icons8.com/color-glass/48/000000/twitter.png" class="contact_imgs">
+				</a>
+				<a href="https://discord.gg/" target="_blank">
+					<img src="https://img.icons8.com/color/48/000000/discord-logo.png" class="contact_imgs">
+				</a>
+				
+			</p>
+		</div>
+		
+	</div>
+	
+	<a href="#info" id="info"></a>
+	<div class="section">
+		<hr/>
+		<div>
+
+			<h2>● Info</h2>
+			<br/>
+			<p>
+				✎ Game Development is the art of creating games and describes the design,
+				development and release of a game. 
+				It may involve concept generation, design, build, test and release. While you create a game,
+				it is important to think about the game mechanics, rewards, player engagement and level design...
+			</p>
+			<br/>
+			<section id="donate"> To help Mohamolo please <span>Donate</span> </section>
+
+		</div>
+		<img class="moha" src="imgs/logo.png" alt="tates image"/>
+		
+	</div>
+	
+	<hr style="border-color:#00000050;margin-top: 150px;"/>
+	<p style="font-size: 10px;padding: 15px;"> ▎By Tates Last update in 2022/05/08 </p>
+	
+	<script type="text/javascript">
+
+		// Change lighting mode ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function setup_lighting_mode(){
+
+			if( localStorage.getItem('mode') == 'dark' ){
+				set_dark_mode();
+				document.getElementById('lighting_mode').innerHTML = '☀';
+
+			}else{
+				set_light_mode();
+				document.getElementById('lighting_mode').innerHTML = '☽';
+
+			}
+		};
+
+		function change_lighting_mode(){
+
+			let mode = document.getElementById('lighting_mode');
+
+			if( mode.innerHTML ==  '☽'){
+				set_dark_mode();
+				mode.innerHTML = '☀';
+				localStorage.setItem('mode', 'dark');
+
+			}else{
+				set_light_mode();
+				mode.innerHTML = '☽';
+				localStorage.setItem('mode', 'light');
+
+			}
+
+		}
+
+		function set_light_mode(){
+
+			document.getElementById('main_header').style.backgroundColor = '#e2e2e2';
+			document.getElementById('body').style.backgroundColor = '#e2e2e2';
+			document.getElementById('body').style.color = '#151515';
+
+			let section = document.getElementsByClassName('section');
+			for(let id=0; id<section.length; id++){ section[id].style.backgroundColor = '#f0f0f0'; }
+
+		}
+
+		function set_dark_mode(){
+
+			document.getElementById('main_header').style.backgroundColor = '#222222';
+			document.getElementById('body').style.backgroundColor = '#222222';
+			document.getElementById('body').style.color = '#fff';
+
+			let section = document.getElementsByClassName('section');
+			for(let id=0; id<section.length; id++){ section[id].style.backgroundColor = '#2a2a2a'; }
+			
+		}
+
+		// Text play ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function play_text(){
+
+			let text_play = document.getElementById('text_play'),
+				color_list = ['#d00', '#0d0', '#00d', '#dd0', '#d0d', '#0dd', '#ddd'],
+				count = 2022;
+
+			setInterval(()=>{
+				text_play.innerHTML = '▼ Download year ' + count++;
+				text_play.style.color = color_list[count%7];
+			}, 50);
+
+		};
+		
+		// Scroll into place ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		function scroll_to(place){
+			
+			document.getElementById("body").classList.add('body_anime');
+			setTimeout(()=>{document.getElementById("body").classList.remove('body_anime')}, 500);
+			document.getElementById(place).click();
+
+		}
+
+		// main ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+		window.onload = ()=>{
+
+			setup_lighting_mode();
+			play_text();
+			document.getElementById("body").style.opacity = "1";
+			document.getElementById("body").classList.add('body_anime');
+			setTimeout(()=>{document.getElementById("body").classList.remove('body_anime')}, 500);
+			
+		}
+
+	</script>
+	
+</body>
+</html>
