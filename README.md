@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="imgs/logo.png" alt="Mohamolo logo" width="150">
+  <img src="imgs/logo.png" alt="Tates logo" width="150">
   <br><br><br>
 </div>
 
->【 Mohamolo 】
+>【 Tates 】
 
 ###
-> 👋 Welcome to Mohamolo project! ★ Official Web Site for Mohamolo ★ <br>
+> 👋 Welcome to Tates project! ★ Official Web Site for Tates ★ <br>
 > 😁 This Web Site is about 2d short game development ✔ <br>
 > ❤ Please don't forget to help us by sharing your thoughts✔ <br>
 ##
